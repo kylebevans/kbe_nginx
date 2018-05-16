@@ -11,7 +11,7 @@ package 'nginx'
 
 # create a secure diffie hellman parameter file
 execute 'make-dh-file' do
-  command 'openssl dhparam 4096 -out /etc/ssl/certs/dhparam.pem'
+  command 'openssl dhparam 4096 -dsaparam -out /etc/ssl/certs/dhparam.pem'
   not_if { File.exist?("/etc/ssl/certs/dhparam.pem") }
 end
 
