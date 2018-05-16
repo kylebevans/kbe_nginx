@@ -40,8 +40,8 @@ template '/etc/nginx/nginx.conf' do
 end
 
 # create the default site that forwards http to https
-template '/etc/nginx/conf.d/default.conf' do
-  source 'default.conf.erb'
+template '/etc/nginx/sites-available/default' do
+  source 'default.erb'
   owner 'root'
   group 'root'
   mode 0644
